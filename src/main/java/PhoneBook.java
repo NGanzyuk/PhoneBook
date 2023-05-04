@@ -10,4 +10,8 @@ public class PhoneBook {
         this.phoneBook.put(name, number);
         return this.phoneBook.size();
     }
+    public String findByNumber(String number){
+        return null;
+    }
+
 }

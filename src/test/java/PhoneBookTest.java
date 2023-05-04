@@ -30,4 +30,15 @@ public class PhoneBookTest {
         int expected = phoneBook.add("Name", "Number");
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    public void testFindByNumber(){
+        final String result = "Number";
+        PhoneBook phoneBook = new PhoneBook();
+        String number = "Number";
+        phoneBook.add("Name", number);
+        String expected = phoneBook.findByNumber(number);
+        Assertions.assertEquals(expected, result);
+    }
+
 }
