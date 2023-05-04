@@ -1,14 +1,15 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class PhoneBook {
     Map<String, String> phoneBook;
     public PhoneBook(){
-        phoneBook = new HashMap<>();
+        phoneBook = new TreeMap<>();
     }
     public int add (String name, String number){
         if(this.phoneBook.containsKey(name) || this.phoneBook.containsValue(number)){
-            return this.phoneBook.size();
+            throw new SameValuesError("Такие значения уже есть");
         }
         this.phoneBook.put(name, number);
         return this.phoneBook.size();
@@ -29,8 +30,16 @@ public class PhoneBook {
     }
 
     public void printAllNames(){
-        System.out.println("dasknflsknf");
+        for (String key: this.phoneBook.keySet()) {
+            System.out.println(key);
+        }
+
     }
 
+    public static class SameValuesError extends RuntimeException {
+        public SameValuesError(String message) {
+            super(message);
+        }
+    }
 
 }
