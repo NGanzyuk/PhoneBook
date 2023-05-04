@@ -27,4 +27,10 @@ public class PhoneBook {
         }
         return null;
     }
+
+    public void printAllNames(){
+        System.out.println("dasknflsknf");
+    }
+
+
 }
