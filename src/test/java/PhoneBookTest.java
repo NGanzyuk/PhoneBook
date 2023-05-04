@@ -33,7 +33,7 @@ public class PhoneBookTest {
 
     @Test
     public void testFindByNumber(){
-        final String result = "Number";
+        final String result = "Name";
         PhoneBook phoneBook = new PhoneBook();
         String number = "Number";
         phoneBook.add("Name", number);

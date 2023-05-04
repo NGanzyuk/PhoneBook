@@ -7,10 +7,18 @@ public class PhoneBook {
         phoneBook = new HashMap<>();
     }
     public int add (String name, String number){
+        if(this.phoneBook.containsKey(name) || this.phoneBook.containsValue(number)){
+            return this.phoneBook.size();
+        }
         this.phoneBook.put(name, number);
         return this.phoneBook.size();
     }
     public String findByNumber(String number){
+        for (String key: phoneBook.keySet()) {
+            if(phoneBook.get(key).equals(number)){
+                return key;
+            }
+        }
         return null;
     }
 
